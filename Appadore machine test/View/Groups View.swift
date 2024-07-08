@@ -55,7 +55,6 @@ struct Groups_View: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.white)
                 .cornerRadius(51, corners: [.topLeft, .topRight])
-                .padding(.bottom, -40)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(.primer))

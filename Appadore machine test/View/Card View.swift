@@ -39,7 +39,7 @@ struct CardView: View {
                                         .cornerRadius(4)
                     }
                     Text(description)
-                        .font(.subheadline)
+                        .mediumStyle(color:.gray.opacity(0.8),size: 12.92)
                         .multilineTextAlignment(.leading)
                         .lineLimit(1)
                 }
