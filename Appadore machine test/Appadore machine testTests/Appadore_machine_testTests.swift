@@ -47,7 +47,7 @@ final class Appadore_machine_testTests: XCTestCase {
             user_status:  "Invited"
         )
         
-        let data  = coreDataManager.fetchUserId(with: 1001)
+        let data  = coreDataManager.fetchUserId(with: 1002)
         print("##\(data.first?.user_status)")
         XCTAssertTrue((data.first?.user_status == "Invited"),"Data not saved in Core Data")
 

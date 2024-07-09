@@ -67,7 +67,6 @@ struct EditGroup: View {
                             .overlay(
                                 Rectangle()
                                     .frame(height: 2)
-                                    .padding(.horizontal, 16)
                                     .foregroundColor(Color(.systemGray4)),
                                 alignment: .bottom
                             )
@@ -76,7 +75,7 @@ struct EditGroup: View {
                                     nameText = String(newValue.prefix(characterLimit))
                                 }
                             }
-                            .padding(.horizontal)
+                            .padding(.horizontal,36)
                         
                         HStack {
                             Spacer()
