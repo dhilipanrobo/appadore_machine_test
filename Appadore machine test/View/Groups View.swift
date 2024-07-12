@@ -60,6 +60,7 @@ struct Groups_View: View {
             .background(Color(.primer))
             .task {
                 await groupsController.getUserLoad()
+                print(groupsController.groups)
             }
         }
     }
@@ -68,4 +69,5 @@ struct Groups_View: View {
 #Preview {
     Groups_View()
 }
+
 

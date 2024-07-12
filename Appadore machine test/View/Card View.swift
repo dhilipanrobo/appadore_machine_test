@@ -53,7 +53,7 @@ struct CardView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 20, height: 20)
                         
-                        Text("\(participantCount)")
+                        Text("\(Double(participantCount).formattedAsCurrency)")
                             .multilineTextAlignment(.leading)
                             .padding(.trailing)
                     }

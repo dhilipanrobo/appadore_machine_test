@@ -23,7 +23,8 @@ class GroupsController: ObservableObject {
     }
     
     func getUserLoad() async {
-        await getUserList()
+        //  await getUserList()
+        await POCgetUserList()
     }
     
     @MainActor func addUser(param: [String: Any]) async {
@@ -52,6 +53,25 @@ class GroupsController: ObservableObject {
             print("Failed to fetch data: \(error.localizedDescription)")
         }
     }
+    
+     func POCgetUserList() async {
+        POC_APIManager.shared.get(endpoint: devUrl()) { (result: Result<Groups_Base, APIError>) in
+            DispatchQueue.main.async { [self] in
+                switch result {
+                case .success(let mdata):
+                    groups = mdata.result?.groups ?? []
+                    Task {
+                        await saveUsersToCoreData()
+                        userEntity = coreDataManager.fetchUser()
+                    }
+                case .failure(let error):
+                    print("  failed: \(error)")
+                   
+                }
+            }
+        }
+    }
+    
     
     // MARK: - Save CoreData
     func saveUsersToCoreData() async {

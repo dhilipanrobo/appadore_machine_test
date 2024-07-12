@@ -62,7 +62,6 @@ class CoreDataManager {
     }
     //MARK: - Update Data
     func updateUser() {
-       
         do{
             try presistentContainert.viewContext.save()
             print("Data saved! ")

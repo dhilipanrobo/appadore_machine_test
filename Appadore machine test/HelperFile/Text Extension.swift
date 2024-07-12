@@ -28,7 +28,20 @@ extension Text {
         self.font(.system(size: size, weight: .regular, design: .default))
             .foregroundColor(color)
     }
+    
 }
+
+extension Double {
+    var formattedAsCurrency: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencySymbol = "$"
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+        return formatter.string(from: NSNumber(value: self)) ?? "$0.00"
+    }
+}
+
 
 extension View {
   func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {

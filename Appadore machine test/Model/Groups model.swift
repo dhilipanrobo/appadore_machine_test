@@ -9,7 +9,7 @@
 import Foundation
 struct Groups_Base : Codable,Hashable {
     let message : String?
-    let result : Result?
+    let result : ResultData?
 
     enum CodingKeys: String, CodingKey {
 
@@ -40,7 +40,7 @@ struct Groups : Codable,Hashable {
     }
 }
 
-struct Result : Codable,Hashable {
+struct ResultData : Codable,Hashable {
     let current_page : Int?
     let groups : [Groups]?
     let next_page : Bool?

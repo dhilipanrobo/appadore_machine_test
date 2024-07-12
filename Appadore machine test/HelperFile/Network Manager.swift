@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 
+
 class ApiManager: NSObject {
     
     // MARK: - Post Data
@@ -60,6 +61,12 @@ class ApiManager: NSObject {
                 }
             }
         }
+    }
+    static func pocData(api: String, param: [String: Any], success: @escaping (Data) -> Void, failure: @escaping (Error) -> Void) {
+        
+     
+
+        
     }
 }
 
